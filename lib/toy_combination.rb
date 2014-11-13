@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-TOYS = %w(doll bunny)
+TOYS = %w(doll bunny windy)
 BODY_PARTS = %w(head body legs)
  
 
