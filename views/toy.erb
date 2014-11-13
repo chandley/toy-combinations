@@ -1,17 +1,13 @@
+<head>
+<meta http-equiv="refresh" content="100">
+</head>
+
 <table>
+  <% (0..2).each do |i| %>
   <tr>
     <td> 
-      <img src="/images/bunny_head.jpg\" alt="bunny_head" width="300" height="200">
+      <%= @picture_tags[i] %>
     </td>
   </tr>
-   <tr>
-    <td> 
-      <img src="/images/bunny_body.jpg\" alt="bunny_body" width="300" height="200">
-    </td>
-  </tr>
-   <tr>
-    <td> 
-      <img src="/images/bunny_legs.jpg\" alt="bunny_legs" width="300" height="200">
-    </td>
-  </tr>
+  <% end %>
 </table>
