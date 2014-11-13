@@ -10,13 +10,25 @@ require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
 Given(/^a user$/) do
-  pending # express the regexp above with the code you wish you had
+  @session = ToyCombination.new
 end
 
 When(/^I visit the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+  visit('/')
 end
 
 Then(/^I should see an unshuffled toy$/) do
+  expect(page).to have_content?('bunny_head.JPG')
+end
+
+Given(/^an unshuffled homepage$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I press the shuffle button$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see a shuffled combination of toys$/) do
   pending # express the regexp above with the code you wish you had
 end
