@@ -11,7 +11,9 @@ class ToyCombination < Sinatra::Base
   get '/' do
     'Hello ToyCombination!'
     @picture_tags = []
-    BODY_PARTS.each {|body_part| @picture_tags << tag_for_random_body_part(body_part)}
+    show_unshuffled = 'bunny'
+    BODY_PARTS.each {|body_part| @picture_tags << tag_for_toy_body_part(show_unshuffled,body_part)}
+    # BODY_PARTS.each {|body_part| @picture_tags << tag_for_random_body_part(body_part)}
     erb :toy
   end
 
@@ -19,7 +21,7 @@ class ToyCombination < Sinatra::Base
   run! if app_file == $0
 
   def tag_for_toy_body_part(toy,body_part)
-    return "<img src='/images/#{toy}_#{body_part}_small.jpg\' alt='#{toy}_#{body_part}' width='300' height='200'>"
+    return "<img id=#{body_part} src='/images/#{toy}_#{body_part}_small.jpg\' alt='#{toy}_#{body_part}' width='300' height='200'>"
   end
 
   def tag_for_random_body_part(body_part)

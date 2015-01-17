@@ -17,9 +17,13 @@ When(/^I visit the homepage$/) do
   visit('/')
 end
 
+
+
 Then(/^I should see an unshuffled toy$/) do
   # expect(page).to have_xpath("<img src='/images/bunny_head_small.jpg\' alt='bunny_head' width='300' height='200'>")
-  expect(page).to have_xpath("//images/bunny_head_small.jpg")
+  expect(page).to have_selector('img #head')
+  
+  expect(page).to have_selector("img[src$='bunny_head_small.jpg']")
 end
 
 Given(/^an unshuffled homepage$/) do
